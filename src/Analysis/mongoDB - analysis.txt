@@ -1,0 +1,78 @@
+1. Count of different products in product category 
+
+db.project.aggregate([
+    {
+        $group: {
+            _id: "$product_category",
+            count: { $sum: 1 }
+        }
+    },
+    {
+        $project: {
+            product_category: "$_id",
+            count: 1,
+            _id: 0
+        }
+    }
+])
+
+
+2. maximum transaction count in a day 
+
+
+ db.project.aggregate([
+  {
+    $group: {
+      _id: {
+        $dateToString: { format: "%Y-%m-%d", date: "$timestamp" }
+      },
+      transactionCount: { $sum: 1 }
+    }
+  },
+  {
+    $sort: {
+      transactionCount: -1
+    }
+  },
+  {
+    $limit: 1
+  }
+])
+
+
+3. average payment installments
+
+
+db.project.aggregate([
+  {
+    $group: {
+      _id: "$payment_type",
+      avgInstallments: { $avg: "$payment_installments" }
+    }
+  }
+])
+
+
+4. earliest and latest order dates by customer id 
+
+
+db.project.aggregate([
+  {
+    $group: {
+      _id: "$customer_id",
+      earliestTransactionDate: { $min: { $dateFromString: { dateString: "$timestamp", format: "%d-%m-%Y %H:%M" } } },
+      latestTransactionDate: { $max: { $dateFromString: { dateString: "$timestamp", format: "%d-%m-%Y %H:%M" } } }
+    }
+  },
+  {
+    $project: {
+      customer_id: "$_id",
+      earliestTransactionDate: 1,
+      latestTransactionDate: 1,
+      _id: 0
+    }
+  }
+])
+
+
+
