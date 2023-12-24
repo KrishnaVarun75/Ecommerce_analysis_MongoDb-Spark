@@ -2,6 +2,13 @@
 
 This project focuses on managing an E-commerce dataset using MongoDB for storage, Python for UI, Apache Spark for analysis, and PowerBI for data visualization.
 
+## Prerequisites
+
+- Spark (scala)
+- MongoDB
+- PowerBi desktop
+- Pymongo
+
 ## Overview
 
 - **Dataset**: E-commerce dataset containing 17 attributes, including order details, customer information, product details, and sales information.
@@ -34,7 +41,9 @@ This project focuses on managing an E-commerce dataset using MongoDB for storage
 
 ### 2. Connecting Python UI to MongoDB
 
-- Install `pymongo` using `pip install pymongo`.
+- Install `pymongo`.
+  ```python
+  pip install pymongo
 - UI consists of `index.html` and `dashboard.html`.
 - Ensure attribute data types in `index.html` match MongoDB specifications to avoid errors.
 
@@ -67,7 +76,7 @@ libraryDependencies ++= Seq(
 
 Ensure to follow each step meticulously to set up the database, perform analysis, and visualize data accurately.
 
-For any queries or issues, refer to the respective documentation links provided or reach out for assistance.
+For any queries or issues, refer to the respective documentation links provided or reach out for assistance. Feel free to reach out to me via [LinkedIn](#) for any clarifications or collaboration.
 
 ---
 
