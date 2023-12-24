@@ -76,7 +76,7 @@ libraryDependencies ++= Seq(
 
 Ensure to follow each step meticulously to set up the database, perform analysis, and visualize data accurately.
 
-For any queries or issues, refer to the respective documentation links provided or reach out for assistance. Feel free to reach out to me via [kedin.com/in/a-venkata-sai-krishna-varun-060304247/](#) for any clarifications or collaboration.
+For any queries or issues, refer to the respective documentation links provided or reach out for assistance. Feel free to reach out to me via [A Venkata Sai Krishna Varun](kedin.com/in/a-venkata-sai-krishna-varun-060304247/) for any clarifications or collaboration.
 
 ---
 
