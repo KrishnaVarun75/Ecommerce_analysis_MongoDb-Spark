@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Group-9 E-commerce DB</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Group-9</h1>
+    <h1>Add E-commerce Data</h1>
+    <form method="POST" action="/add_data">
+        <label for="order_id">Order ID:</label>
+        <input type="text" id="order_id" name="order_id" required><br><br>
+
+        <label for="customer_id">Customer ID:</label>
+        <input type="text" id="customer_id" name="customer_id" required><br><br>
+
+        <label for="timestamp">Timestamp:</label>
+        <input type="text" id="timestamp" name="timestamp" required><br><br>
+
+        <label for="customer_city">Customer City:</label>
+        <select id="customer_city" name="customer_city" required>
+            {% for city in cities %}
+                <option value="{{ city }}">{{ city }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="customer_state">Customer State:</label>
+        <select id="customer_state" name="customer_state" required>
+            {% for state in states %}
+                <option value="{{ state }}">{{ state }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required><br><br>
+
+        <label for="price_MRP">Price MRP:</label>
+        <input type="number" id="price_MRP" name="price_MRP" required><br><br>
+
+        <label for="payment">Payment:</label>
+        <input type="number" id="payment" name="payment" required><br><br>
+
+        <label for="payment_type">Payment Type:</label>
+        <select id="payment_type" name="payment_type" required>
+            {% for payment_type in payment_types %}
+                <option value="{{ payment_type }}">{{ payment_type }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="payment_installments">Payment Installments:</label>
+        <input type="number" id="payment_installments" name="payment_installments" required><br><br>
+
+        <label for="product_id">Product ID:</label>
+        <input type="text" id="product_id" name="product_id" required><br><br>
+
+        <label for="product_category">Product Category:</label>
+        <select id="product_category" name="product_category" required>
+           {% for product_category in p_category %}
+               <option value="{{ product_category }}">{{ product_category }}</option>
+           {% endfor %}
+        </select><br><br>
+
+        <label for="rating">Rating:</label>
+        <input type="number" id="rating" name="rating" required><br><br>
+
+        <label for="seller_id">Seller ID:</label>
+        <input type="text" id="seller_id" name="seller_id" required><br><br>
+
+        <label for="seller_city">Seller City:</label>
+        <select id="seller_city" name="seller_city" required>
+            {% for seller_city in s_cities %}
+                <option value="{{ seller_city }}">{{ seller_city }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <label for="seller_state">Seller State:</label>
+        <select id="seller_state" name="seller_state" required>
+            {% for seller_state in s_states %}
+                <option value="{{ seller_state }}">{{ seller_state }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="order_status">Order Status:</label>
+        <select id="order_status" name="order_status" required>
+            {% for order_status in order_statuses %}
+                <option value="{{ order_status }}">{{ order_status }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <input type="submit" value="Add Data">
+    </form>
+</body>
+</html>

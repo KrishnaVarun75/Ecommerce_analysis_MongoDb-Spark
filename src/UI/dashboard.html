@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-commerce Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>E-commerce Dashboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer ID</th>
+                <th>Timestamp</th>
+                <th>Customer City</th>
+                <th>Customer State</th>
+                <th>Quantity</th>
+                <th>Price MRP</th>
+                <th>Payment</th>
+                <th>Payment Tyoe</th>
+                <th>Payment Installements</th>
+                <th>Product ID</th>
+                <th> Product Category</th>
+                <th>Rating</th>
+                <th>Seller ID</th>
+                <th>Seller City</th>
+                <th>Order Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in data %}
+            <tr>
+                <td>{{ entry.order_id }}</td>
+                <td>{{ entry.customer_id }}</td>
+                <td>{{ entry.timestamp }}</td>
+                <td>{{ entry.customer_city }}</td>
+                <td>{{ entry.customer_state }}</td>
+                <td>{{entry.quantity}}</td>
+                <td>{{entry.price_MRP}}</td>
+                <td>{{entry.payment}}</td>
+                <td>{{entry.payment_type}}</td>
+                <td>{{entry.payment_installments}}</td>
+                <td>{{entry.product_id}}</td>
+                <td>{{entry.product_category}}</td>
+                <td>{{ entry.rating}}</td>
+                <td>{{ entry.seller_id}}</td>
+                <td>{{ entry.seller_city}}</td>
+                <td>{{ entry.seller_state}}</td>
+                <td>{{ entry.order_status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
