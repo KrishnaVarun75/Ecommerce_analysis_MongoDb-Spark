@@ -64,7 +64,8 @@ libraryDependencies ++= Seq(
 )
 ```
 
-- Run `MongoSpark.scala` to perform analysis after following all preceding steps.
+- Run `Spark_analysis.scala` to perform analysis after following all preceding steps.
+- You can also check on some of the analysis i performed in MongoDB in `mongoDB-analysis.txt`
 
 ### 5. Data Visualization in PowerBI
 
